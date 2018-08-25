@@ -20,20 +20,51 @@ namespace Tic_Tac_Toe
     /// </summary>
     public partial class MainWindow : Window
     {
+        Game Game;
+        bool turn = GameCst.O;
         public MainWindow()
         {
             InitializeComponent();
+            Game = new Game();
         }
 
         private void grdGame1_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.Source is Rectangle)
+            if (Game.GameIsStarted)
             {
-                Rectangle currentrct = (Rectangle)e.Source;
-                int iLigne = (int)currentrct.GetValue(Grid.RowProperty) - 1;
-                int iColonne = (int)currentrct.GetValue(Grid.ColumnProperty) - 1;
 
+                if (e.Source is Rectangle)
+                {
+                    Rectangle currentrct = (Rectangle)e.Source;
+                    int iLigne = (int)currentrct.GetValue(Grid.RowProperty);
+                    int iColonne = (int)currentrct.GetValue(Grid.ColumnProperty);
+
+
+
+                    Game.playersMove(turn, iLigne, iColonne);
+
+                    turn = GameCst.O ? GameCst.X : GameCst.O;
+
+                }
             }
+
+        }
+
+        private void btnCreatePlayers_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtPlayer1Name.Text == "" || txtPlayer2Name.Text == "")
+            {
+                MessageBox.Show("veuillez entré le nom des joueurs");
+                return;
+            }
+            Game.CreatePlayers(txtPlayer1Name.Text, txtPlayer2Name.Text);
+            Game.StartGame();
+
         }
     }
 }

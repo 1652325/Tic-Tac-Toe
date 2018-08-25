@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tic_Tac_Toe"
         mc:Ignorable="d"
-        Title="Tic-Tac-Toe" Height="900" Width="900">
-    <Grid x:Name="grdGame1" Margin="0,62,232.6,0" Height="600" VerticalAlignment="Top" HorizontalAlignment="Right" Width="600" RenderTransformOrigin="0.505,0.495" PreviewMouseLeftButtonDown="grdGame1_PreviewMouseLeftButtonDown">
+        Title="Tic-Tac-Toe" Height="998" Width="1277">
+    <Grid x:Name="grdGame1" Margin="0,40,524,0" Height="600" VerticalAlignment="Top" HorizontalAlignment="Right" Width="600" RenderTransformOrigin="0.505,0.495" PreviewMouseLeftButtonDown="grdGame1_PreviewMouseLeftButtonDown">
         <Grid.RowDefinitions>
             <RowDefinition Height="200"/>
             <RowDefinition Height="200"/>
@@ -20,14 +20,25 @@
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Row="0" Grid.Column="0"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Row="0" Grid.Column="1"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Row="0" Grid.Column="2"/>
-                                                                                                                            
+
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Row="1" Grid.Column="0"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Row="1" Grid.Column="1"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Row="1" Grid.Column="2"/>
-                                                                                                                            
+
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Row="2" Grid.Column="0"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Row="2" Grid.Column="1"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Row="2" Grid.Column="2"/>
+        <Grid x:Name="grdSettings" Grid.Column="2" HorizontalAlignment="Left" Height="400" Margin="210,0,-480,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="470">
+            <TextBox x:Name="txtPlayer1Name" HorizontalAlignment="Left" Height="23" Margin="170,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lblPlayer1Name" Content="Nom du premier joueur : " HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="155"/>
+            <TextBox x:Name="txtPlayer2Name" HorizontalAlignment="Left" Height="23" Margin="170,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lblPlayer2Name" Content="Nom du deuxième Joureur : " HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btnStart" Content="Commencer" HorizontalAlignment="Left" Margin="10,207,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="btnStart_Click"/>
+            <Button x:Name="btnChangerRole" Content="Changer les roles" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="100" Height="35"/>
+            <Button x:Name="btnCreatePlayers" Content="Créer les joeurs" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="btnCreatePlayers_Click"/>
+            <Label x:Name="lblBlockJoueur1" Content="Premier joueur : " HorizontalAlignment="Left" Margin="10,256,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblBlockJoueur2" Content="Deuxième joueur : " HorizontalAlignment="Left" Margin="10,287,0,0" VerticalAlignment="Top"/>
+        </Grid>
 
     </Grid>
 </Window>

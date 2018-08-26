@@ -52,16 +52,16 @@ namespace Tic_Tac_Toe
 
         private void btnCreatePlayers_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void btnStart_Click(object sender, RoutedEventArgs e)
-        {
             if (txtPlayer1Name.Text == "" || txtPlayer2Name.Text == "")
             {
                 MessageBox.Show("veuillez entré le nom des joueurs");
                 return;
             }
+        }
+
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            
             Game.CreatePlayers(txtPlayer1Name.Text, txtPlayer2Name.Text);
             Game.StartGame();
 

@@ -69,7 +69,6 @@ namespace Tic_Tac_Toe
                     p2.Move(x, y);
                 }
             }
-            CheckWinner();
         }
 
         public bool PlayerAreCreated()

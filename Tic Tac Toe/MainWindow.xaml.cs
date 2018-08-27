@@ -47,13 +47,14 @@ namespace Tic_Tac_Toe
                         int iColonne = (int)currentrct.GetValue(Grid.ColumnProperty);
 
                         Game.playersMove(turn, iLigne, iColonne);
-
                         currentrct.Fill = turn == GameCst.O ? O : X;
                         if (turn == GameCst.O)
                             turn = GameCst.X;
 
                         else
                             turn = GameCst.O;
+                        Game.CheckWinner();
+
                     }
                 }
             }

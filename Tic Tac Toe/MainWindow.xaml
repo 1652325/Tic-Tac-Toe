@@ -35,7 +35,7 @@
             <Label x:Name="lblPlayer2Name" Content="Nom du deuxième Joureur : " HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top"/>
             <Button x:Name="btnStart" Content="Commencer" HorizontalAlignment="Left" Margin="10,207,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="btnStart_Click"/>
             <Button x:Name="btnChangerRole" Content="Changer les roles" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="100" Height="35"/>
-            <Button x:Name="btnCreatePlayers" Content="Créer les joeurs" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="btnCreatePlayers_Click"/>
+            <Button x:Name="btnCreatePlayers" Content="Créer les joueurs" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="btnCreatePlayers_Click"/>
             <Label x:Name="lblBlockJoueur1" Content="Premier joueur : " HorizontalAlignment="Left" Margin="10,256,0,0" VerticalAlignment="Top"/>
             <Label x:Name="lblBlockJoueur2" Content="Deuxième joueur : " HorizontalAlignment="Left" Margin="10,287,0,0" VerticalAlignment="Top"/>
         </Grid>

@@ -55,20 +55,20 @@ namespace Tic_Tac_Toe
                 countP2 = 0;
                 for (int j = 0; j < 3; j++)
                 {
-                    if (GameBoard[i, j] == GameCst.BlockX)
+                    if (GameBoard[i, j] == GameCst.BlockO)
                         countP1++;
 
-                    if (GameBoard[i, j] == GameCst.BlockO)
+                    if (GameBoard[i, j] == GameCst.BlockX)
                         countP2++;
 
                     if (countP1 == 3)
                     {
-                        MessageBox.Show(p1.Name + "à gagné");
+                        MessageBox.Show(p1.Name + " à gagné (Fred a perdu!)");
                         return true;
                     }
                     if (countP2 == 3)
                     {
-                        MessageBox.Show(p2.Name + "à gagné");
+                        MessageBox.Show(p2.Name + " à gagné");
                         return true;
                     }
                 }
@@ -88,12 +88,12 @@ namespace Tic_Tac_Toe
 
                     if (countP1 == 3)
                     {
-                        MessageBox.Show(p1.Name + "à gagné");
+                        MessageBox.Show(p1.Name + " à gagné");
                         return true;
                     }
                     if (countP2 == 3)
                     {
-                        MessageBox.Show(p2.Name + "à gagné");
+                        MessageBox.Show(p2.Name + " à gagné");
                         return true;
                     }
                 }

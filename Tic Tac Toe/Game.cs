@@ -16,14 +16,14 @@ namespace Tic_Tac_Toe
 
         public Game()
         {
-            
+            GameBoard = new Board();
+
         }
 
         public void StartGame()
         {
             GameIsStarted = true;
 
-            GameBoard = new Board();
 
         }
 
@@ -47,7 +47,7 @@ namespace Tic_Tac_Toe
 
         public void playersMove(bool turn, int x , int y)
         {
-            if (turn = GameCst.O)
+            if (turn == GameCst.O)
             {
                 if (p1.turn == GameCst.O)
                 {
@@ -58,7 +58,7 @@ namespace Tic_Tac_Toe
                     p2.Move(x, y);
                 }
             }
-            if (turn = GameCst.X)
+            if (turn == GameCst.X)
             {
                 if (p1.turn == GameCst.X)
                 {
@@ -69,6 +69,16 @@ namespace Tic_Tac_Toe
                     p2.Move(x, y);
                 }
             }
+            CheckWinner();
+        }
+
+        public bool PlayerAreCreated()
+        {
+            if (p1 == null || p2 == null)
+            {
+                return false;
+            }
+            return true;
         }
         
 

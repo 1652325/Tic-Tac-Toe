@@ -78,8 +78,6 @@ namespace Tic_Tac_Toe
 
             for (int i = 0; i < 3; i++)
             {
-                countP1 = 0;
-                countP2 = 0;
                 for (int j = 0; j < 3; j++)
                 {
                     if (i == j && GameBoard[i, j] == GameCst.BlockX)

@@ -22,10 +22,15 @@ namespace Tic_Tac_Toe
     {
         Game Game;
         bool turn = GameCst.O;
+        ImageBrush X = new ImageBrush();
+        ImageBrush O = new ImageBrush();
+
         public MainWindow()
         {
             InitializeComponent();
             Game = new Game();
+            X.ImageSource = new BitmapImage(new Uri(@"../../Images/X.jpg", UriKind.Relative));
+            O.ImageSource = new BitmapImage(new Uri(@"../../Images/O.jpg", UriKind.Relative));
         }
 
         private void grdGame1_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -35,19 +40,23 @@ namespace Tic_Tac_Toe
 
                 if (e.Source is Rectangle)
                 {
-                    Rectangle currentrct = (Rectangle)e.Source;
-                    int iLigne = (int)currentrct.GetValue(Grid.RowProperty);
-                    int iColonne = (int)currentrct.GetValue(Grid.ColumnProperty);
+                    if (Game.GameIsStarted)
+                    {
+                        Rectangle currentrct = (Rectangle)e.Source;
+                        int iLigne = (int)currentrct.GetValue(Grid.RowProperty);
+                        int iColonne = (int)currentrct.GetValue(Grid.ColumnProperty);
 
+                        Game.playersMove(turn, iLigne, iColonne);
 
+                        currentrct.Fill = turn == GameCst.O ? O : X;
+                        if (turn == GameCst.O)
+                            turn = GameCst.X;
 
-                    Game.playersMove(turn, iLigne, iColonne);
-
-                    turn = GameCst.O ? GameCst.X : GameCst.O;
-
+                        else
+                            turn = GameCst.O;
+                    }
                 }
             }
-
         }
 
         private void btnCreatePlayers_Click(object sender, RoutedEventArgs e)
@@ -57,13 +66,14 @@ namespace Tic_Tac_Toe
                 MessageBox.Show("veuillez entré le nom des joueurs");
                 return;
             }
+            Game.CreatePlayers(txtPlayer1Name.Text, txtPlayer2Name.Text);
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            
-            Game.CreatePlayers(txtPlayer1Name.Text, txtPlayer2Name.Text);
-            Game.StartGame();
+            if (Game.PlayerAreCreated())
+                Game.StartGame();
+
 
         }
     }
